@@ -19,6 +19,10 @@ public class CitaMedica {
             throw new IllegalArgumentException("El id del doctor es obligatorio");
         }
         this.doctorId = doctorId;
+
+        if(especialidadId == null){
+            throw new IllegalArgumentException("El id de la especialidad es obligatorio");
+        }
         this.especialidadId = especialidadId;
         this.fechaHora = fechaHora;
         this.estado = estado;

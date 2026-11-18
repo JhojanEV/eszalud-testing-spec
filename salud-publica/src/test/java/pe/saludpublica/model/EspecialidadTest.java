@@ -33,4 +33,19 @@ public class EspecialidadTest {
             );
         });
     }
+
+    @Test
+    @DisplayName("Verificar atributos de la especialidad")
+    void shouldReturnCorrectSpecialtyAttributes(){
+
+        Especialidad especialidad = new Especialidad(
+                "Cardiologia",
+                "Tratamiento de enfermedades del corazón"
+        );
+
+        assertEquals("Cardiologia", especialidad.getNombre());
+        assertEquals("Tratamiento de enfermedades del corazón", especialidad.getDescripcion());
+
+    }
+
 }

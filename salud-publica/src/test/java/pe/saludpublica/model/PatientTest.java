@@ -1,11 +1,13 @@
 package pe.saludpublica.model;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PatientTest {
 
         @Test
+        @DisplayName("Crear un paciente con datos válidos")
         void shouldCreatePatientWithValidData() {
 
             Paciente paciente = new Paciente(

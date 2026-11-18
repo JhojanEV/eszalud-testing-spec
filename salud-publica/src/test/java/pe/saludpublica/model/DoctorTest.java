@@ -57,4 +57,18 @@ public class DoctorTest {
         });
     }
 
+    @Test
+    @DisplayName("Rechazar la creación de un doctor sin apellidos")
+    void shouldRejectDoctorWithoutLastNames() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Doctor(
+                    "246897531",
+                    "Marcelo",
+                    null,
+                    "COPR12345",
+                    "ESP123"
+            );
+        });
+    }
+
 }

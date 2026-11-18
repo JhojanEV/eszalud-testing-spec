@@ -75,4 +75,25 @@ public class CitaMedicaTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("Crear cita médica sin id de la especialidad")
+    void shouldRejectAppointmentWithoutSpecialityId() {
+
+        LocalDateTime fechaHora = LocalDateTime.of(
+                2026, 11, 20, 10, 30
+        );
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new CitaMedica(
+                        "PAC123",
+                        "DOC123",
+                        null,
+                        fechaHora,
+                        "PROGRAMADA"
+                )
+        );
+    }
+
 }

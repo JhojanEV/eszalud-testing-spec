@@ -35,4 +35,24 @@ public class CitaMedicaTest {
                 () -> assertEquals("PROGRAMADA", cita.getEstado())
         );
     }
+
+    @Test
+    @DisplayName("Crear cita médica sin id del paciente")
+    void shouldRejectAppointmentWithoutPatientId() {
+
+        LocalDateTime fechaHora = LocalDateTime.of(
+                2026, 11, 20, 10, 30
+        );
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new CitaMedica(
+                        null,
+                        "DOC123",
+                        "ESP123",
+                        fechaHora,
+                        "PROGRAMADA"
+                )
+        );
+    }
 }

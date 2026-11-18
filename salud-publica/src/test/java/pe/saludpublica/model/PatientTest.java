@@ -69,4 +69,24 @@ public class PatientTest {
         });
     }
 
+    @Test
+    @DisplayName("Verificar atributos del paciente")
+    void shouldReturnCorrectPatientAttributes(){
+
+            Paciente paciente = new Paciente(
+                    "987654321",
+                    "Juan",
+                    "Perez",
+                    "928748827",
+                    "juan@gmail.com"
+            );
+
+        assertEquals("987654321", paciente.getDocumento());
+        assertEquals("Juan", paciente.getNombres());
+        assertEquals("Perez", paciente.getApellidos());
+        assertEquals("928748827", paciente.getTelefono());
+        assertEquals("juan@gmail.com", paciente.getCorreo());
+
+    }
+
 }
